@@ -24,8 +24,8 @@ for i in 0..100000 {
 
 ## The Coolest Thing
 
-No worries about synchronization. Implementing your own timeout logic is simple as pie. Everything the limiter need to
-know is 3 things:
+No worries about synchronization, everything is handled safely by the library. 
+Implementing your own timeout logic is simple as pie. Everything the limiter need to know is 3 things:
 
 1. Is it ready to perform new tasks?
 2. For how long the given State should be timed out?
