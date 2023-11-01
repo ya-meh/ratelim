@@ -13,12 +13,12 @@ use ratelim::{Limiter, logic::Timeout};
 let limiter = Limiter::new(Timeout::new(Duration::from_millis(500)));
 
 for i in 0..100000 {
-let limiter_clone = limiter.clone();
-tokio::task::spawn(async move {
-
-limiter_clone.sync(()).await;
-println ! ("{}", i);
-});
+    let limiter_clone = limiter.clone();
+    
+    tokio::task::spawn(async move {
+        limiter_clone.sync(()).await;
+        println ! ("{}", i);
+    });
 }
 ```
 
